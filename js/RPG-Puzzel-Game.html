@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+    <title>Simple RPG Game</title>
+</head>
+<body>
+    <h1>Simple RPG Game</h1>
+    <p>Welcome to the RPG game! Your character is ready for an adventure.</p>
+    <button onclick="startGame()">Start</button>
+    <p id="game-text"></p>
+    <button id="attack-btn" style="display: none;" onclick="attack()">Attack</button>
+    <button id="heal-btn" style="display: none;" onclick="heal()">Heal</button>
+
+    <script>
+        let playerHealth = 100;
+        let monsterHealth = 100;
+        let gameIsRunning = false;
+
+        function startGame() {
+            gameIsRunning = true;
+            document.getElementById("attack-btn").style.display = "inline-block";
+            document.getElementById("heal-btn").style.display = "inline-block";
+            document.getElementById("game-text").textContent = "You are in a battle!";
+        }
+
+        function attack() {
+            const playerDamage = Math.floor(Math.random() * 10) + 1;
+            const monsterDamage = Math.floor(Math.random() * 15) + 1;
+
+            monsterHealth -= playerDamage;
+            playerHealth -= monsterDamage;
+
+            if (monsterHealth <= 0) {
+                endGame("You defeated the monster!");
+            } else if (playerHealth <= 0) {
+                endGame("The monster defeated you. Game over!");
+            } else {
+                document.getElementById("game-text").textContent =
+                    `You hit the monster for ${playerDamage} damage. The monster hits you for ${monsterDamage} damage.`;
+            }
+        }
+
+        function heal() {
+            const playerHealing = Math.floor(Math.random() * 20) + 1;
+
+            playerHealth += playerHealing;
+
+            document.getElementById("game-text").textContent =
+                `You healed for ${playerHealing} points.`;
+
+            if (playerHealth > 100) {
+                playerHealth = 100;
+            }
+        }
+
+        function endGame(message) {
+            gameIsRunning = false;
+            document.getElementById("attack-btn").style.display = "none";
+            document.getElementById("heal-btn").style.display = "none";
+            document.getElementById("game-text").textContent = message;
+        }
+    </script>
+</body>
+</html>
