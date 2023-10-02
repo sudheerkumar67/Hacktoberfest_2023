@@ -9,5 +9,11 @@ A month-long celebration from October 1st to October 31st presented by Digital O
 
 https://hacktoberfest.digitalocean.com/
 
-Rules 🔥
+# Rules 🔥
 To qualify for the official limited edition Hacktoberfest shirt, you must register here and make four Pull Requests (PRs) between October 1-31, 2022 (in any time zone). PRs can be made to any public repository on GitHub, not only the ones with issues labeled Hacktoberfest. This year, the first 40,000 participants who complete the challenge will earn a T-shirt.
+
+# Steps
+1 - Fork it
+2 - Don't forget add github username in contributers.md file.
+3 - Upload your program or projects in specific language folder.
+4 - Wait and merge.
