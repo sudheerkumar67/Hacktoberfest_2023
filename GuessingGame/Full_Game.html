@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Guessing Game</h1>
+        <p id="question"></p>
+        <input type="text" id="answer" placeholder="Enter your guess">
+        <button id="submit">Submit</button>
+        <p id="message"></p>
+    </div>
+    <script>
+        const questions = [
+            { question: 'Question 1?', answer: 'Answer 1' },
+            { question: 'Question 2?', answer: 'Answer 2' },
+            // Add more questions and answers here...
+        ];
+
+        const questionElement = document.getElementById('question');
+        const answerElement = document.getElementById('answer');
+        const submitButton = document.getElementById('submit');
+        const messageElement = document.getElementById('message');
+
+        let currentQuestionIndex = 0;
+
+        function displayQuestion() {
+            if (currentQuestionIndex < questions.length) {
+                questionElement.textContent = questions[currentQuestionIndex].question;
+            } else {
+                questionElement.textContent = 'Game Over';
+                answerElement.setAttribute('disabled', true);
+                submitButton.setAttribute('disabled', true);
+            }
+        }
+
+        function checkAnswer() {
+            const userAnswer = answerElement.value.trim().toLowerCase();
+            const correctAnswer = questions[currentQuestionIndex].answer.toLowerCase();
+
+            if (userAnswer === correctAnswer) {
+                messageElement.textContent = 'Correct!';
+            } else {
+                messageElement.textContent = 'Incorrect. Try again.';
+            }
+
+            answerElement.value = '';
+            currentQuestionIndex++;
+            displayQuestion();
+        }
+
+        displayQuestion();
+        submitButton.addEventListener('click', checkAnswer);
+    </script>
+</body>
+</html>
