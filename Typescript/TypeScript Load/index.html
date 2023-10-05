@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: lightyellow;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>TypeScript Usage</h2>
+    
+    <button onclick="loadTypeScript()">Load TypeScript</button>
+
+    <script src="type.js"></script>
+
+    <script>
+        function loadTypeScript() {
+            var script = document.createElement('script');
+            script.src = "type.js";
+            document.body.appendChild(script);
+        }
+    </script>
+</body>
+
+</html>
