@@ -48,6 +48,7 @@ public class Main
                 break;
             }
         } while (userGuessNumber != secretNumber);
+        userInput.close();
     }
 }
 // Code End
