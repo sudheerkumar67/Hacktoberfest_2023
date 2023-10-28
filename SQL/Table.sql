@@ -20,5 +20,7 @@ VALUES
     ('Go', 2000000, 'Google, Uber, Dropbox'),
     -- Add more languages and data here
     ('Rust', 1500000, 'Mozilla, Microsoft, Discord'),
+    ('Svelte', 60,582, 'Firmenich, yahoo, content square'),
     ('TypeScript', 1400000, 'Microsoft, Slack, Asana');
     -- Add more languages and data here
+    ('Perl', 1,000,000, 'Venmo, TicketMaster, Zoopla'),
