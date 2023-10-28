@@ -23,3 +23,4 @@ VALUES
     ('Svelte', 60,582, 'Firmenich, yahoo, content square')
     ('TypeScript', 1400000, 'Microsoft, Slack, Asana');
     -- Add more languages and data here
+    ('Perl', 1,000,000, 'Venmo, TicketMaster, Zoopla'),
